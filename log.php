@@ -13,7 +13,7 @@ if ($conn) {
         $email=$_POST["email"];
         $password=$_POST["Password"];
 
-        $sqli ="SELECT * from registration where email='$email' AND Password='$password' ";
+        $sqli ="SELECT * from user where email='$email' AND Password='$password' ";
         $res=mysqli_query($conn,$sqli);
         if(mysqli_num_rows($res)>0){
        $_SESSION['email']=$email;   

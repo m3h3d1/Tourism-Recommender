@@ -15,7 +15,7 @@ session_start();
     $username=$_POST['fullname'];
     $email=$_POST['email'];
     $password=$_POST['password']; 
-    $sqlFind = "SELECT * FROM registration where email='$email' ";
+    $sqlFind = "SELECT * FROM user where email='$email' ";
     $resFind =mysqli_query($conn,$sqlFind);
     if (mysqli_num_rows($resFind)>0)
     {
@@ -23,7 +23,7 @@ session_start();
     }
     else
     {
-      $sql="INSERT INTO registration(Name,Email,Password) VALUES ('$username','$email','$password')";
+      $sql="INSERT INTO user(Name,Email,Password) VALUES ('$username','$email','$password')";
       $insertion= mysqli_query($conn,$sql);
       if($insertion)
       {
@@ -43,7 +43,7 @@ else
 ?>
 <html>
 <head>
-    <title>Registration</title>
+    <title>user</title>
     <meta charset="Utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="css/all.min.css">
@@ -55,7 +55,7 @@ else
     <div class="ibg">
         <div class="overlay">
       <div class="i1">
-      <h2 class="text-center i3">Registration</h2>
+      <h2 class="text-center i3">user</h2>
       <form method="post">
         <div class="form-group  mt-7 ml-5 i2">
           <label for="exampleInputName1">Full name</label>
