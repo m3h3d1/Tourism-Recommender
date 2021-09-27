@@ -24,6 +24,7 @@
       <style>
           .l-box{position: relative;top: 30px;left:50px;width: 250px;}
 .l-box2{position: relative;top: 30px;left:150px;width: 250px;}
+
 .l-box4{position: relative;top: 30px;left:270px;width: 250px;font-size: 13px;}
 .bb{font-size: 15px;}
       </style>
@@ -197,18 +198,19 @@
               <div class="row">
                 <div class="col-4 col-sm-4">
                   <div class="box1">
-                    <a href="#"><i class="fas fa-map-marker-alt fa-10x ico"></i></a><br><br>
+                    <a href="map.html"><i class="fas fa-map-marker-alt fa-10x ico"></i></a><br><br>
                   <p class="cap">Find Best Route</p></div>
                 </div>
                 <div class="col-4 col-sm-4">
                   <div class="box1">
-                    <i class="fas fa-hands-helping fa-10x ico"></i><br><br>
-                    <p class="cap">Decide your choice</p></div>
+                  <a href="add_place.php"><i class="fas fa-hands-helping fa-10x ico"></i></a><br><br>
+                    <p class="cap">Share Your Experience</p></div>
                 </div>
                 <div class="col-4 col-sm-4">
                   <div class="box1">
-                    <i class="far fa-comments fa-10x ico"></i><br><br>
-                    <p class="cap">Chatbox</p></div>
+                  <a href="SearchPlace.php"><i class="fas fa-search fa-10x ico"></i></a>
+<br><br>
+                    <p class="cap">Search Required Place </p></div>
                 </div>
               </div>
           </div>

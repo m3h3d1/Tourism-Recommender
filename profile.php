@@ -58,7 +58,7 @@ if (isset($_SESSION['email'])) {
                         
                        
                     </ul>
-                    <li><a href="logout.php" style="text-decoration: none; color: white;"> Logout </a></li>
+                    <li><a href="logout.php" style="text-decoration: none; color: red;"> Logout </a></li>
                 </nav>
                
                 
@@ -208,18 +208,18 @@ if (isset($_SESSION['email'])) {
               <div class="row">
                 <div class="col-4 col-sm-4">
                   <div class="box1">
-                    <a href="#"><i class="fas fa-map-marker-alt fa-10x ico"></i></a><br><br>
+                    <a href="map.html"><i class="fas fa-map-marker-alt fa-10x ico"></i></a><br><br>
                   <p class="cap">Find Best Route</p></div>
                 </div>
                 <div class="col-4 col-sm-4">
                   <div class="box1">
-                    <i class="fas fa-hands-helping fa-10x ico"></i><br><br>
-                    <p class="cap">Decide your choice</p></div>
+                  <a href="add_place.php"> <i class="fas fa-hands-helping fa-10x ico"></i></a><br><br>
+                    <p class="cap">Share Your Moments</p></div>
                 </div>
                 <div class="col-4 col-sm-4">
                   <div class="box1">
-                    <i class="far fa-comments fa-10x ico"></i><br><br>
-                    <p class="cap">Chatbox</p></div>
+                    <a href="SearchPlace.php"><i class="far fa-search fa-10x ico"></i><br><br></a>
+                    <p class="Cap">Search Your Place</p></div>
                 </div>
               </div>
           </div>

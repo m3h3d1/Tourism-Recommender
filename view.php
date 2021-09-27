@@ -61,6 +61,8 @@
                             <li><a href="#" style="text-decoration: none; color: black;"> destinations </a></li>
                             <li><a href="#regions" style="text-decoration: none; color: black;"> Regions </a></li>
                             <li><a href="#experinace" style="text-decoration: none; color: black;"> Experiences </a></li>
+                            <li><a href="#searchplace.php" style="text-decoration: none; color: black;">Search by District </a></li>
+
                            
                         </ul>
                     </nav>
