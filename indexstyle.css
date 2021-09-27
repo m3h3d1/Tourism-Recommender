@@ -1,5 +1,3 @@
-
-
 @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
 
 *{
@@ -132,7 +130,6 @@ a{
         padding-left: 60px;
         padding-right: 60px;
         margin-right: 29px;  
-
     }
     .nav-link:hover
     {
@@ -170,8 +167,8 @@ a{
 .overlay2{position: absolute;width: 100vh;height: 50vh;}
 .l-box{position: relative;top: 30px;left:50px;width: 250px;}
 .l-box2{position: relative;top: 30px;left:150px;width: 250px;}
-.l-box3{position: relative;top: 30px;left:250px;width: 250px;}
-.l-box4{position: relative;top: 30px;left:400px;width: 250px;}
+.l-box3{position: relative;top: 30px;left:270px;width: 250px;}
+.l-box4{position: relative;top: 30px;left:270px;width: 250px;}
 
 .icon-position{
     
@@ -194,9 +191,7 @@ a{
 
 /* .l-box:hover{text-shadow: 0 0 1px yellow}
 .l-box2:hover{text-shadow: 0 0 1px yellow}
-
 .l-box3:hover{text-shadow: 0 0 1px yellow}
-
 .l-box4:hover{text-shadow: 0 0 1px yellow} */
 .i20{height: 180px;}
 .card:hover{transform: scale(1.1);box-shadow: 0 0 5px silver;}
@@ -211,4 +206,3 @@ a{
 .slide1{font-size: 60px;margin-top: 500px;color: #b33939;text-shadow: 0 0 3px 4px sienna;}
 .lined{width: 100%;height: 40px;margin-top: 20px;}
 .carbox{height:100vh;width: 100%;}
-

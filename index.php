@@ -17,11 +17,16 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="indexstyle.css">
-
       <!-- for search -->
       <!-- <title>AJAX Search Suggestions Dropdown List</title> -->
       <link rel="stylesheet" type="text/css" href="style_temp
       .css">
+      <style>
+          .l-box{position: relative;top: 30px;left:50px;width: 250px;}
+.l-box2{position: relative;top: 30px;left:150px;width: 250px;}
+.l-box4{position: relative;top: 30px;left:270px;width: 250px;font-size: 13px;}
+.bb{font-size: 15px;}
+      </style>
 </head>
 <body>
   <section>
@@ -38,14 +43,13 @@
                 <nav>
                     <ul id="MenuItems">
                         <li><a href="#" style="text-decoration: none; color:white;"> Destinations </a></li>
-                        <li><a href="log.php" style="text-decoration: none; color: white;"> Log in </a></li>
-
+                        <li><a href="login.php" style="text-decoration: none; color: white;"> Log in </a></li>
                         <li><a href="#regions" style="text-decoration: none; color: white;"> Regions </a></li>
                         <li><a href="#experinace" style="text-decoration: none; color: white;"> Experiences </a></li>
                        
                     </ul>
                 </nav>
-                <i class="fas fa-search" style="color: white; cursor: pointer; padding-right: 10px;"></i>
+               <a href="view.php"<i class="fas fa-ellipsis-v" style="color: white; cursor: pointer; padding-right: 10px;"></i></a> 
                 
             </div>
             <h1 class="titile"   style="text-align: center; color: white; padding-bottom: 11px;"> DISCOVER YOUR IDEAL HOLIDAY </h1>
@@ -70,21 +74,17 @@
                             <script type="text/javascript">
                               var results = document.getElementById("results");
                               var search = document.getElementById("search");
-
                               function getSearchResults(){
                                 var searchVal = search.value;
-
                                 if(searchVal.length < 1){
                                   results.style.display='none';
                                   return;
                                 }
-
                                 console.log('searchVal : ' + searchVal);
                                 var xhr = new XMLHttpRequest();
                                 var url = 'index_searchresults.php?search=' + searchVal;
                                 // open function
                                 xhr.open('GET', url, true);
-
                                 xhr.onreadystatechange = function(){
                                   if(xhr.readyState == 4 && xhr.status == 200){
                                     var text = xhr.responseText;
@@ -93,10 +93,8 @@
                                     results.style.display='block';
                                   }
                                 }
-
                                 xhr.send();
                               }
-
                               search.addEventListener("input", getSearchResults);
                             </script>
                 </nav>
@@ -163,7 +161,7 @@
                 </div>
               </div>
             <div class="item">
-              <img src="img/bandarban.jpg" alt="Badarban" style="width:100%;height: 500px">
+              <img src="img/bandarban.jpg" alt="Bandarban" style="width:100%;height: 500px">
               <div class="carousel-caption">
                 <h3>Bandarban</h3>
                 <!-- <p>We love the Big Apple!</p> -->
@@ -318,7 +316,7 @@
         <h2 style="padding-top: 25px; text-align: center;" id="experinace"> Experience </h2>
         <div class="container">
             <div class="video-player">
-                <video src="img/video.mp4" controls autoplay width="100%"></video>
+                <video src="img/video1.mp4" controls autoplay width="100%"></video>
                 <a href="#videostory" class="btn1">Watch more </a>
                 
             </div>
@@ -330,7 +328,7 @@
                   <div class="row">
                       <div class="col-sm-4 col-md-6 col-lg-3">
                           <div class="l-box container">
-                              <p class="p1 ml-1"> Tourism Recommender</p>
+                              <p class="p1 ml-1" style="margin-left: 100px;"> Tourism Recommender</p>
                               <p class="t10">It is a long established fact that a readers will be distracted by the readable content of the page when looking at its layout.</p>
                               <p class="t10">It is a long established fact that a readers will be distracted by the readable content </p>
                           </div>
@@ -352,9 +350,15 @@
                               <p class="t10"><i class="fab fa-twitter text-primary"></i> Long established fact that a readers will be <span class="text-warning">distracted</span> by the readable content </p>
                           </div>
                       </div> -->
-                      <div class="col-sm-4 col-md-6 col-lg-3">
-                          <div class="l-box4 container">
-                              <h3 class=" text-white"><b>GET IN TOUCH</b></h3><!-- 
+                      <div class="col-sm-4 col-md-4 col-lg-4 three">
+                          <div class="l-box4 container" style="margin-left: -60px;">
+                              <h3 class=" text-white"><b>Terms & Policies</b></h3>
+                              <ul class="listing bb">
+                                  <li class="mb-1 bb">Privacy Policy</li></li>
+                                  <li class="mb-1 ">Do not use my private Information</li>
+                                  <li class="mb-1 bb">Terms of use</li>  
+                                  <li class="mb-1 ">Accessibility</li>      
+<!-- 
                               <p class="t11 text-start"><span class="text-warning"><b>MAIN OFFICE:</b></span><br>S.A Tower(Level-5),plot#1,Road#134,Block SE(A),Gulshan,Dhaka</p>
                               <p class="t11 mt-1" ><span class="text-warning"><b>PHONE:</b></span><br>+001232 44 5665   +02245 765 7655</p>
                               <div class="text-white align-items-center text-center"><i class="fab fa-twitter"></i> <i class="fab fa-facebook"></i>  <i class="fas fa-envelope-open-text"></i>  <i class="fab fa-instagram"></i></div> -->
@@ -366,9 +370,9 @@
       
       </div>
       <div class="row">
-          <!-- <div class="col-12 last3">
+          <div class="col-12 last3">
               <p style="text-align: center;""><i class="fas fa-copyright"></i>COPYRIGHTS 2017 STRUCTURE THEME ALL RIGHTS RESERVED</p>
-          </div> -->
+          </div>
       
       </div>
       
