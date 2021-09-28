@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.4
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 28, 2021 at 10:15 AM
--- Server version: 10.4.17-MariaDB
--- PHP Version: 8.0.2
+-- Generation Time: Sep 28, 2021 at 05:55 AM
+-- Server version: 10.4.14-MariaDB
+-- PHP Version: 7.4.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -40,15 +40,15 @@ CREATE TABLE `places` (
 --
 
 INSERT INTO `places` (`id`, `place_name`, `division`, `description`, `image`) VALUES
-(1, 'Saint Martin', 'Cox\'s bazar', 'Saint Martin is one of the most attractive and popular tourist place in Bangladesh.St. Martin\'s Island is a small island in the northeastern part of the Bay of Bengal, about 9 km south of the tip of the Cox\'s Bazar-Teknaf peninsula, and forming the southernmost part of Bangladesh. There is a small adjoining island that is separated at high tide, called Chera Dwip.\r\nImage result for saintmartin\r\nSt. Martin is generally known as “Narikel Zinzira” in Bengali, means \'Coconut Island\' and this is the only coral reef island in Bangladesh.', 'Saint-martin\'s-island.jpg'),
+(1, 'Saint Martin', 'Coxs bazar', 'Saint Martin is one of the most attractive and popular tourist place in Bangladesh.St. Martin\'s Island is a small island in the northeastern part of the Bay of Bengal, about 9 km south of the tip of the Cox\'s Bazar-Teknaf peninsula, and forming the southernmost part of Bangladesh. There is a small adjoining island that is separated at high tide, called Chera Dwip.\r\nImage result for saintmartin\r\nSt. Martin is generally known as “Narikel Zinzira” in Bengali, means \'Coconut Island\' and this is the only coral reef island in Bangladesh.', 'Saint-martin\'s-island.jpg'),
 (15, 'Coxs Bazar', 'Coxs Bazar', 'Cox’s Bazar is a town on the southeast coast of Bangladesh. It’s known for its very long, sandy beachfront, stretching from Sea Beach in the north to Kolatoli Beach in the south. Aggameda Khyang monastery is home to bronze statues and centuries-old Buddhist manuscripts. South of town, the tropical rainforest of Himchari National Park has waterfalls and many birds. North, sea turtles breed on nearby Sonadia Island.', 'cox bazar.jpg'),
 (16, 'Keokaradong', 'Bandarban', 'keokaradong. Keokradong is the second highest mountain of Bangladesh. Keokradong is about 4,035 ft (1,230 meters) high from the sea level.It is the place of surprising beauty. This natural beauty is surely attracts the mind of the adventurous people. In the winter season many adventurous tourist visit this place with great excitement. You will pleased with the dazzling beauty of green hill, cool fountains, zigzag path, hilly road side, hide and seek game of clouds on the top of the hill. ', 'keokaradong.jpg'),
-(17, 'Paharpur', 'Chittagong', 'The Chittagong Hill Tracts Life and Nature at Risk The Chittagong Hill Tracts (CHT)—5,093 sq. miles in extent or 10% of Bangladesh—is a unique territory. While mast of the country is flat and a few feet above the sea level, the CHT in the southeast is mountainous with beautiful landscapes.its known as \'majestic natural beauty\' ', 'Foy\'s+Lake_Chittagong'),
+(17, 'Paharpur', 'Chittagong', 'The Chittagong Hill Tracts Life and Nature at Risk The Chittagong Hill Tracts (CHT)—5,093 sq. miles in extent or 10% of Bangladesh—is a unique territory. While mast of the country is flat and a few feet above the sea level, the CHT in the southeast is mountainous with beautiful landscapes.its known as \'majestic natural beauty\' ', '330px-Paharpur_Buddhist_Bihar.jpg'),
 (18, ' Shait Gumbad Mosque.', 'Bagerhat', 'Bagerhat is not as famous as Dhaka or Srimangal but this peaceful city in the south west of the country has an array of historic attractions that you can enjoy at a slower pace.\r\nThe city was founded in the 15th century by the Sufi Saint Khan Jahan Ali and it is the home of the Shait Gumbad Mosque.', 'Bagerhat.jpg'),
 (19, 'Haringhata', 'Barguna', 'Haringhata is a forest at the mouth of Bishkhali and Baleshwar rivers, about four kilometers from the district town. There are various mangrove trees in this forest. In addition, it is seen that many other wild animals including otters, wild pigs. Next to it is a long beach. Tourists do not come to this interesting beach. Apart from this, you can enjoy the struggling lifestyle of the fishermen in Haringhata area.', 'barguna.jpg'),
 (20, 'guthia mosque', 'Barisal', 'The Baitul Aman Jame Masjid Complex, commonly known as Guthia Mosque of Barisal, is a mosque complex of Bangladesh having a land area of 14 acres, comparing to the 8.30 acres land area of the national mosque Baitul Mukarram of the country. The Baitul Aman Jame Masjid Complex consists of a mosque, a large eidgah, a graveyard, three lakes, a madrasa and an orphanage.Established on December 16, 2003, Guthia Mosque is  a tourist spot in Bangladesh.', 'guthia mosque.jpg'),
 (21, 'Bhola island', 'Bhola', 'Bhola Island is the largest island of Bangladesh with an area of 1441 km2. It is most of the land area of Bhola District.Bhola Island is also known for its Buffalo curd (doi) which is unique in Bangladesh. The process that has been used has remained unchanged. It is made in traditional clay pots and the process takes 18 hours. It is popular in the Island and is served in special occasions such as weddings, festivals and other special occasions', 'Bhola.jpg'),
-(22, 'Mahasthangarh.jpg', 'Bogra', 'Mahasthangarh is one of the most earliest urban archaeological sites so far discovered in Bangladesh. The village Mahasthan in Shibganj upazila of Bogra District contains the remains of an ancient city which was called Pundranagara or Paundravardhanapura in the territory of Pundravardhana.', 'mahasthangarh.jpg'),
+(22, 'Mahasthangarh', 'Bogra', 'Mahasthangarh is one of the most earliest urban archaeological sites so far discovered in Bangladesh. The village Mahasthan in Shibganj upazila of Bogra District contains the remains of an ancient city which was called Pundranagara or Paundravardhanapura in the territory of Pundravardhana.', 'mahasthangarh.jpg'),
 (23, 'Gangasagar Dighi', 'Brahmanbaria', 'Gangasagar Dighi is located at Akhaura , Brahmanbaria', 'Gangasagar Dighi.jpg'),
 (24, 'Chandpur river port', 'Chandpur', 'Chandpur, river port, south-central Bangladesh. It is situated at the confluence of the Dakatia and Meghna rivers. It is a major jute-shipping centre, connected by road and rail with Comilla, near the eastern border with India, and Noakhali to the southeast.it has the biggest wholesale Hilsha fish market in Bangladesh, the mighty river Padma and Meghna has met here, it has an old launch terminal playing important role in river transportation system in Bangladesh.', 'Chandpur.jpg'),
 (25, 'Foy\'sLake', 'Chittagong', 'Fayez Lake is an artificial lake located in Khulshi area near Pahartali railway station in Chittagong. The distance from Dhaka to Fayez Lake is about 263 kilometers. And, 6 kilometers from Zero Point in Chittagong. Fayez Lake is located on 338 acres of land.One of the human made Lake in Chittagong city, Bangladesh.it’s very attractive place to visit.', 'Foy\'sLake.jpg'),
@@ -149,7 +149,7 @@ ALTER TABLE `user`
 -- AUTO_INCREMENT for table `places`
 --
 ALTER TABLE `places`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=54;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
 -- AUTO_INCREMENT for table `user`
