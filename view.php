@@ -92,7 +92,7 @@ if (isset($_SESSION['email'])) {
                             echo "<img src='upload/".$image_text."' height='300'/>"; 
                         ?> -->
                     </div>
-            <div class="col-8">
+            <div class="col-5">
                 <h4> <?php echo "$place_name"; ?> </h4>
                 <!-- <p><i class="fa fa-star" style="color: yellow;"></i> 9.0 out of 10 <span> 100 reviews </span> </p> -->
                 <div class="discription">
@@ -165,7 +165,7 @@ if (isset($_SESSION['email'])) {
                            }
                            mysqli_close($con);
                         } else {
-                            echo "Please log in to add add review";
+                            echo "Please log in to add review";
                         }
                     }
             ?>
