@@ -1,40 +1,3 @@
-<?php
-include_once 'database.php';
-$output_dir = "upload/";/* Path for file upload */
-if(isset($_POST['save']))
-{  
-   $place_name = $_POST['place_name'];
-   $division = $_POST['division'];
-   $description = $_POST['description'];
-
-
-   // image
-   $RandomNum   = time();
-   $ImageName      = str_replace(' ','-',strtolower($_FILES['image']['name'][0]));
-   $ImageType      = $_FILES['image']['type'][0];
-
-   $ImageExt = substr($ImageName, strrpos($ImageName, '.'));
-   $ImageExt       = str_replace('.','',$ImageExt);
-   $ImageName      = preg_replace("/\.[^.\s]{3,4}$/", "", $ImageName);
-   $NewImageName = $ImageName.'-'.$RandomNum.'.'.$ImageExt;
-    $ret[$NewImageName]= $output_dir.$NewImageName;
-
-   /* Try to create the directory if it does not exist */
-   if (!file_exists($output_dir))
-   {
-      @mkdir($output_dir, 0777);
-   }               
-    move_uploaded_file($_FILES["image"]["tmp_name"][0],$output_dir."/".$NewImageName );
-        $sql = "INSERT INTO `places`(place_name,division,description,`image`)VALUES ('$place_name','$division','$description','$NewImageName')";
-   if (mysqli_query($con, $sql)) {
-    echo "New record created successfully !";
-   } else {
-    echo "Error: " . $sql . "
-" . mysqli_error($con);
-   }
-   mysqli_close($con);
-}
-?>
 <!DOCTYPE html>
 <html>
     <head>
@@ -93,7 +56,7 @@ if(isset($_POST['save']))
                 <div class="box1">
     
       
-    <form method="post" action="add_place.php" enctype="multipart/form-data">
+    <form method="post" enctype="multipart/form-data">
         <b>Place Name: </b>
         <input type="text" name="place_name">
         <br><br>
@@ -167,7 +130,10 @@ if(isset($_POST['save']))
         </select>
         <br><br>
         <b>Description: </b>
-        <input type="text" name="description">
+        <!-- <input type="text" name="description"> -->
+        <label for="desc">Enter Description<br></label>
+
+        <textarea id="desc" name="description" rows="4" cols="50"></textarea>
         <br>
         <br>
 
@@ -176,6 +142,45 @@ if(isset($_POST['save']))
         <!-- <button type="submit">Upload Image</button> -->
         <br><br>
         <input type="submit" name="save" value="submit" class="btn btn-secondary">
+
+        
+        <?php
+        include_once 'database.php';
+        $output_dir = "upload/";/* Path for file upload */
+        if(isset($_POST['save']))
+        {  
+           $place_name = $_POST['place_name'];
+           $division = $_POST['division'];
+           $description = $_POST['description'];
+
+
+           // image
+           $RandomNum   = time();
+           $ImageName      = str_replace(' ','-',strtolower($_FILES['image']['name'][0]));
+           $ImageType      = $_FILES['image']['type'][0];
+
+           $ImageExt = substr($ImageName, strrpos($ImageName, '.'));
+           $ImageExt       = str_replace('.','',$ImageExt);
+           $ImageName      = preg_replace("/\.[^.\s]{3,4}$/", "", $ImageName);
+           $NewImageName = $ImageName.'-'.$RandomNum.'.'.$ImageExt;
+            $ret[$NewImageName]= $output_dir.$NewImageName;
+
+           /* Try to create the directory if it does not exist */
+           if (!file_exists($output_dir))
+           {
+              @mkdir($output_dir, 0777);
+           }               
+            move_uploaded_file($_FILES["image"]["tmp_name"][0],$output_dir."/".$NewImageName );
+                $sql = "INSERT INTO `places`(place_name,division,description,`image`)VALUES ('$place_name','$division','$description','$NewImageName')";
+           if (mysqli_query($con, $sql)) {
+            echo "New record created successfully !";
+           } else {
+            echo "Error: " . $sql . "
+        " . mysqli_error($con);
+           }
+           mysqli_close($con);
+        }
+        ?>
     </form>
 </div>
 </div>

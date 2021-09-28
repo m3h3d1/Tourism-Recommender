@@ -13,6 +13,10 @@
     <style>
         .box4{background: burlywood;}
         .design{background: darkgrey;}
+        table, th, td {
+          border: 1px solid black;
+          border-collapse: collapse;
+        }
     </style>
 </head>
 
@@ -28,11 +32,80 @@
                     <div class="row">
                         <div class="col-md-6">
                             <form action=" " method="post">
-                                <div class="form-group">
-                                    <input type="text" name="get_place" placeholder="Enter division" class="form-control" style="margin-left:390px;margin-top:40px" required>
+                                <!-- <div class="form-group">
+                                    <input type="text" name="get_place" placeholder="Enter District" class="form-control" style="margin-left:390px;margin-top:40px" required>
 
-                                </div>
-                                <button type="submit" name="search_by_division" class="btn btn-primary text-center" style="margin-left:690px;margin-top:40px">Search</button>
+                                </div> -->
+        <label for="validationCustom04" style="margin-left:40%;"><b> Select District   </b>  </label>
+        <select name="get_place">
+            <option selected disabled value="">Choose related District</option>
+            <option>Bagerhat</option>
+            <option>Bandarban</option>
+            <option>Barguna</option>
+            <option>Barisal</option>
+            <option>Bazar</option>
+            <option>Bhola</option>
+            <option>Bogra</option>
+            <option>Brahmanbaria</option>
+            <option>Chandpur</option>
+            <option>Chittagong</option>
+            <option>Chuadanga</option>
+            <option>Comilla</option>
+            <option>Coxs Bazar</option>
+            <option>Dhaka</option>
+            <option>Dinajpur</option>
+            <option>Faridpur</option>
+            <option>Feni</option>
+            <option>Gaibandha</option>
+            <option>Gazipur</option>
+            <option>Gopalganj</option>
+            <option>Habiganj</option>
+            <option>Jamalpur</option>
+            <option>Jessore</option>
+            <option>Jhalokati</option>
+            <option>Jhenaidah</option>
+            <option>Joypurhat</option>
+            <option>Khagrachari</option>
+            <option>Khulna</option>
+            <option>Kishoreganj</option>
+            <option>Kurigram</option>
+            <option>Kushtia</option>
+            <option>Lakshmipur</option>
+            <option>Lalmonirhat</option>
+            <option>Madaripur</option>
+            <option>Magura</option>
+            <option>Manikganj</option>
+            <option>Maulvibazar</option>
+            <option>Meherpur</option>
+            <option>Munshiganj</option>
+            <option>Mymensingh</option>
+            <option>Naogaon</option>
+            <option>Narail</option>
+            <option>Narayanganj</option>
+            <option>Narsingdi</option>
+            <option>Natore</option>
+            <option>Nawabganj</option>
+            <option>Netrokona</option>
+            <option>Nilphamari</option>
+            <option>Noakhali</option>
+            <option>Pabna</option>
+            <option>Panchagarh</option>
+            <option>Patuakhali</option>
+            <option>Pirojpur</option>
+            <option>Rajbari</option>
+            <option>Rajshahi</option>
+            <option>Rangamati</option>
+            <option>Rangpur</option>
+            <option>Shariatpur</option>
+            <option>Sherpur</option>
+            <option>Sirajgonj</option>
+            <option>Sunamganj</option>
+            <option>Sylhet</option>
+            <option>Tangail</option>
+            <option>Thakurgaon</option>
+        </select>
+        <br><br>
+                                <button type="submit" name="search_by_division" class="btn btn-primary text-center" style="margin-left:50%">Search</button>
                             </form>
                         </div>
                     </div>
@@ -66,7 +139,7 @@
 
                                         <th scope="col">Place_name</th>
                                         </th>
-                                        <th scope="col">division</th>
+                                        <th scope="col">District</th>
                                         <th scope="col">Description</th>
                                         <th scope="col">Picture</th>
 
@@ -79,7 +152,7 @@
                                             while ($row = mysqli_fetch_array($query_run)) {
                                         ?>
                                             <tr>
-                                                <td><?php echo $row['place_name']; ?></td>
+                                                <td><a href="view.php?place_name=<?php echo $row['place_name']; ?>"><?php echo $row['place_name']; ?></a></td>
 
                                                 <td><?php echo $row['division']; ?></td>
                                                 <td><?php echo $row['description']; ?></td>

@@ -50,12 +50,6 @@
        
             <div class="container">
                 <div class="navbar">
-                    <div class="logo">
-                        <img src="upload/<?php echo $image_text; ?>" width="270px" alt="" style=" float:left; cursor: pointer;">
-                        <!-- <?php
-                            echo "<img src='upload/".$image_text."' height='300'/>"; 
-                        ?> -->
-                    </div>
                     <nav>
                         <ul id="MenuItems">
                             <li><a href="#" style="text-decoration: none; color: black;"> destinations </a></li>
@@ -66,6 +60,7 @@
                            
                         </ul>
                     </nav>
+                    <br>
                     <i class="fas fa-search" style="color: black; cursor: pointer; padding-right: 10px;"></i>
                     
                 </div>
@@ -77,6 +72,12 @@
 
      <section>
          <div class="row">
+                    <div class="logo">
+                        <img src="upload/<?php echo $image_text; ?>" width="500px" alt="" style=" float:left; cursor: pointer;">
+                        <!-- <?php
+                            echo "<img src='upload/".$image_text."' height='300'/>"; 
+                        ?> -->
+                    </div>
             <div class="col-5">
                 <h4> <?php echo "$place_name"; ?> </h4>
                 <p><i class="fa fa-star" style="color: yellow;"></i> 9.0 out of 10 <span> 100 reviews </span> </p>
@@ -118,16 +119,17 @@
                         echo "Please Enter rating between 0 to 10";
                         mysqli_close($con);
                         exit();
-                    }
-
-                    $sql = "INSERT INTO `rating`(rating,review)VALUES ('$rating', '$review')";
-                   if (mysqli_query($con, $sql)) {
-                    echo "New record created successfully !";
-                   } else {
-                    echo "Error: " . $sql . "
-                " . mysqli_error($con);
+                    } else {
+                        $sql = "INSERT INTO `rating`(rating,review)VALUES ('$rating', '$review')";
+                       if (mysqli_query($con, $sql)) {
+                        echo "New record created successfully !";
+                       } else {
+                        echo "Error: " . $sql . "
+                    " . mysqli_error($con);
+                       }
+                       mysqli_close($con);
                    }
-                   mysqli_close($con);
+
                 }
             ?>
 
