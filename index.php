@@ -24,7 +24,6 @@
       <style>
           .l-box{position: relative;top: 30px;left:50px;width: 250px;}
 .l-box2{position: relative;top: 30px;left:150px;width: 250px;}
-
 .l-box4{position: relative;top: 30px;left:270px;width: 250px;font-size: 13px;}
 .bb{font-size: 15px;}
       </style>
@@ -50,7 +49,7 @@
                        
                     </ul>
                 </nav>
-               <a href="view.php"<i class="fas fa-ellipsis-v" style="color: white; cursor: pointer; padding-right: 10px;"></i></a> 
+               <a href="admin.php"<i class="fas fa-ellipsis-v" style="color: white; cursor: pointer; padding-right: 10px;"></i></a> 
                 
             </div>
             <h1 class="titile"   style="text-align: center; color: white; padding-bottom: 11px;"> DISCOVER YOUR IDEAL HOLIDAY </h1>

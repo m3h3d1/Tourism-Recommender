@@ -13,13 +13,12 @@ if ($conn) {
         $email=$_POST["email"];
         $password=$_POST["Password"];
 
-        $sqli ="SELECT * from user where email='$email' AND Password='$password' ";
+        $sqli ="SELECT * from admin where email='$email' AND Password='$password' ";
         $res=mysqli_query($conn,$sqli);
-            $row = mysqli_fetch_array($res);
         if(mysqli_num_rows($res)>0){
-        $_SESSION['email']=$email;    
-        $_SESSION['id'] = $row['id'];
-        header('location:profile.php');
+       $_SESSION['email']=$email;   
+			
+        header('location:add_place.php');
         }
         else
 		{
@@ -70,8 +69,10 @@ else
     <div class="ibg">
         <div class="overlay">
       <div class="i1 container">
-      <h2 class="text-center i3">Log in </h2>
-      <form method="post" action="login.php" class="fo">
+      <img src="image/th.jpg" width="60px" height="60px" style="margin-left: 300px;margin-top:-20px;border-radius:50%">
+
+      <h2 class="text-center i3"> Admin Log in </h2>
+      <form method="post" action="admin.php" class="fo">
 				
 				<div class="form-group">
 					<label for="email">Email</label>
@@ -85,7 +86,7 @@ else
 					<label><input type="checkbox" name="">Remember me</label>
 				</div> -->
 				<button type="submit" name="login" class="btn btn-success center-block">Submit</button><br><br>
-				<h5 class="text-white"><a class="p3" href="Registration.php">Don't Have a Account?</a></h5>
+				<!-- <h5 class="text-white"><a class="p3" href="Registration.php">Don't Have a Account?</a></h5> -->
 				<!-- <a class="btn btn-secondary btn-lg"></a> Create an account</a> -->
 			</form>
             <?php

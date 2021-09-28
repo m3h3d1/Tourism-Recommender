@@ -16,6 +16,7 @@
               // echo "<br>Place Name = {$row['place_name']} <br>";
               // echo "Division = {$row['division']} <br>";
               $description = $row['description'];
+              $place_id = $row['id'];
               // echo "Description: {$row['description']} <br>";
           }
       } else {
@@ -104,32 +105,50 @@
             <form action="" method="post">
             <textarea name="comment" class="text-area" cols="40" rows="5" placeholder="write your opinion here....." style="resize: none; padding-left: 10px;"></textarea>
             <!-- <input type="text" name="comment" class="text-area" cols="40" rows="5" placeholder="write your opinion here....." style="resize: none; padding-left: 10px;"> -->
-            <textarea name="rating" class="text-area" cols="15" rows="2" placeholder=" Rating out of 10" style="resize: none; padding-left: 10px;"></textarea>
-            <div class="btn-design">
+            <!-- <textarea name="rating" class="text-area" cols="15" rows="2" placeholder=" Rating out of 10" style="resize: none; padding-left: 10px;"></textarea> -->
+            <!-- <div class="btn-design"> -->
              <!-- <button class="btn"> Add review</button> -->
+
+
+
+             <br>
+                     <label for="validationCustom04"><b>Rating   </b>  </label>
+        <select name="rating" style="margin-left: 30px;">
+            <option selected disabled value="">Choose</option>
+            <option>1</option>
+            <option>2</option>
+            <option>3</option>
+            <option>4</option>
+            <option>5</option>
+            <option>6</option>
+            <option>7</option>
+            <option>8</option>
+            <option>9</option>
+            <option>10</option>
+        </select>
              <input type="submit" name="save" value="Add Review">
             </div>
             <?php 
-                include_once 'database.php';
+                include 'database.php';
                 if(isset($_POST['save']))
                 {  
-                   $rating = $_POST['comment'];
-                   $review = $_POST['rating'];
-                    if($rating<0 || $rating>10) {
-                        echo "Please Enter rating between 0 to 10";
-                        mysqli_close($con);
-                        exit();
-                    } else {
-                        $sql = "INSERT INTO `rating`(rating,review)VALUES ('$rating', '$review')";
-                       if (mysqli_query($con, $sql)) {
-                        echo "New record created successfully !";
-                       } else {
-                        echo "Error: " . $sql . "
-                    " . mysqli_error($con);
-                       }
-                       mysqli_close($con);
-                   }
 
+                    // $sqljoin = "SELECT * FROM rating INNER JOIN user ON rating.user_id = user.id INNER JOIN places ON rating.place_id = places.id where user.id=$_SESSION['id'] and places.id=$place_id";
+
+                   $rating = $_POST['rating'];
+                   $review = $_POST['comment'];
+
+                    $sql = "INSERT INTO `rating`(place_id, user_id, rating ,review)VALUES ('$place_id', '$_SESSION[id]', '$rating', '$review')";
+
+
+
+                   if (mysqli_query($con, $sql)) {
+                    echo "New review inserted!";
+                   } else {
+                    echo "Error: " . $sql . "
+                " . mysqli_error($con);
+                   }
+                   mysqli_close($con);
                 }
             ?>
 
