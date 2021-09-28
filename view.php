@@ -52,6 +52,7 @@ if (isset($_SESSION['email'])) {
 
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css">
+    
 </head>
 <body>
     
@@ -64,6 +65,7 @@ if (isset($_SESSION['email'])) {
                 <div class="navbar">
                     <nav>
                         <ul id="MenuItems">
+                            <li><a href="index.php" style="text-decoration: none; color: black;"> Home </a></li>
                             <li><a href="#" style="text-decoration: none; color: black;"> destinations </a></li>
                             <li><a href="#regions" style="text-decoration: none; color: black;"> Regions </a></li>
                             <li><a href="#experinace" style="text-decoration: none; color: black;"> Experiences </a></li>
@@ -90,7 +92,7 @@ if (isset($_SESSION['email'])) {
                             echo "<img src='upload/".$image_text."' height='300'/>"; 
                         ?> -->
                     </div>
-            <div class="col-5">
+            <div class="col-8">
                 <h4> <?php echo "$place_name"; ?> </h4>
                 <!-- <p><i class="fa fa-star" style="color: yellow;"></i> 9.0 out of 10 <span> 100 reviews </span> </p> -->
                 <div class="discription">
@@ -114,7 +116,7 @@ if (isset($_SESSION['email'])) {
     <section class="reviws">
         <div class="comment-box">
             <form action="" method="post">
-            <textarea name="comment" class="text-area" cols="40" rows="5" placeholder="write your opinion here....." style="resize: none; padding-left: 10px;"></textarea>
+            <textarea name="comment" class="text-area" style="margin-left:150px margin-top=-50px" cols="40" rows="5" placeholder="write your opinion here....." style="resize: none; padding-left: 10px;"></textarea>
             <!-- <input type="text" name="comment" class="text-area" cols="40" rows="5" placeholder="write your opinion here....." style="resize: none; padding-left: 10px;"> -->
             <!-- <textarea name="rating" class="text-area" cols="15" rows="2" placeholder=" Rating out of 10" style="resize: none; padding-left: 10px;"></textarea> -->
             <!-- <div class="btn-design"> -->
@@ -123,8 +125,8 @@ if (isset($_SESSION['email'])) {
 
 
              <br>
-                     <label for="validationCustom04"><b>Rating   </b>  </label>
-        <select name="rating" style="margin-left: 30px;">
+                     <label for="validationCustom04" style="margin-left:30px"><b>Rating   </b>  </label>
+        <select name="rating" style="margin-left:30px;">
             <option selected disabled value="">Choose</option>
             <option>1</option>
             <option>2</option>
