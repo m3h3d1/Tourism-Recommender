@@ -27,7 +27,7 @@ session_start();
       $insertion= mysqli_query($conn,$sql);
       if($insertion)
       {
-        $_SESSION['name']=$username;
+        $_SESSION['email']=$email;
         header('location:profile.php');
       }
       else

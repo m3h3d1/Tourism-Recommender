@@ -49,7 +49,9 @@
     </head>
     
     <body>
+
         <div class="row back animate__flash">
+
 
             <div class="col-md-7">
                 <h1 style="font-weight: bold;color:rgb(24, 36, 1) ;margin-left:280px ;margin-top:30px;">Share Your Moment</h1>
@@ -142,6 +144,8 @@
         <!-- <button type="submit">Upload Image</button> -->
         <br><br>
         <input type="submit" name="save" value="submit" class="btn btn-secondary">
+        <a href="index.php" <button class="btn btn-success my-2 my-sm-0 ml-5 mt-4" type="submit">Home</button></a>
+
 
         
         <?php

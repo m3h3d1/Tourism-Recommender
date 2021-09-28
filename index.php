@@ -24,6 +24,7 @@
       <style>
           .l-box{position: relative;top: 30px;left:50px;width: 250px;}
 .l-box2{position: relative;top: 30px;left:150px;width: 250px;}
+
 .l-box4{position: relative;top: 30px;left:270px;width: 250px;font-size: 13px;}
 .bb{font-size: 15px;}
       </style>
@@ -37,7 +38,7 @@
             <div class="navbar">
                 <div class="logo">
                   <div class="caption">
-                    <p class="p1">Tourism Recommender</p>
+                    <p class="p1">Jatra</p>
                 </div>
                 </div>
                 <nav>
@@ -49,7 +50,7 @@
                        
                     </ul>
                 </nav>
-               <a href="admin.php"<i class="fas fa-ellipsis-v" style="color: white; cursor: pointer; padding-right: 10px;"></i></a> 
+               <a href="admin.php"<i class="fas fa-ellipsis-v">Admin</i></a> 
                 
             </div>
             <h1 class="titile"   style="text-align: center; color: white; padding-bottom: 11px;"> DISCOVER YOUR IDEAL HOLIDAY </h1>
@@ -61,7 +62,9 @@
                 <nav class="navbar navbar-light ">
                   <form class="form-inline"> ***
                     <input class="form-control mr-sm-2" type="search" id="search" name="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-success my-2 my-sm-0" type="submit">Search Results =></button>
+                    <button class="btn btn-success my-2 my-sm-0" type="submit">Search by Place =></button><br><br>
+                   <a href="searchplace.php" <button class="btn btn-success my-2 my-sm-0 ml-5" type="submit">Search By District =></button>></a>
+
                   </form>
                        <!-- <input type="text" id="search" name="search"> -->
                             <!-- <input type="button" name="" value="Search"> -->
@@ -329,7 +332,7 @@
                   <div class="row">
                       <div class="col-sm-4 col-md-6 col-lg-3">
                           <div class="l-box container">
-                              <p class="p1 ml-1" style="margin-left: 100px;"> Tourism Recommender</p>
+                              <p class="p1 ml-1" style="margin-left: 100px;">Jatra</p>
                               <p class="t10">It is a long established fact that a readers will be distracted by the readable content of the page when looking at its layout.</p>
                               <p class="t10">It is a long established fact that a readers will be distracted by the readable content </p>
                           </div>

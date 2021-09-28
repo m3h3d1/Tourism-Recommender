@@ -21,6 +21,7 @@
 </head>
 
 <body>
+<a href="index.php" <button class="btn btn-success my-2 my-sm-0 ml-5" type="submit">Home</button></a>
     
         <div class="row">
             <div class="col-md-12 mt-2">
@@ -38,7 +39,7 @@
                                 </div> -->
         <label for="validationCustom04" style="margin-left:40%;"><b> Select District   </b>  </label>
         <select name="get_place">
-            <option selected disabled value="">Choose related District</option>
+            <option selected disabled value="" >Choose related District</option>
             <option>Bagerhat</option>
             <option>Bandarban</option>
             <option>Barguna</option>

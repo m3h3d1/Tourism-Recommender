@@ -1,13 +1,10 @@
 <?php
 session_start();
 if (isset($_SESSION['email'])) {
-// echo $_SESSION['email'];
-
 } else {
     header('location:index.php');
 }
 ?>
-
 <<!DOCTYPE html>
 <html lang="en">
 <head>
@@ -75,7 +72,9 @@ if (isset($_SESSION['email'])) {
                 <nav class="navbar navbar-light ">
                   <form class="form-inline"> ***
                     <input class="form-control mr-sm-2" type="search" id="search" name="search" placeholder="Search" aria-label="Search">
-                    <button class="btn btn-success my-2 my-sm-0" type="submit">Search Results =></button>
+                    <button class="btn btn-success my-2 my-sm-0" type="submit">Search by Place =></button>
+                   <a href="searchplace.php" <button class="btn btn-success my-2 my-sm-0 ml-5" type="submit">Search By District =></button>></a>
+
                   </form>
                        <!-- <input type="text" id="search" name="search"> -->
                             <!-- <input type="button" name="" value="Search"> -->
@@ -221,7 +220,7 @@ if (isset($_SESSION['email'])) {
                 </div>
                 <div class="col-4 col-sm-4">
                   <div class="box1">
-                    <a href="SearchPlace.php"><i class="far fa-search fa-10x ico"></i><br><br></a>
+                    <a href="SearchPlace.php"><i class="fas fa-search fa-10x ico"></i><br><br></a>
                     <p class="Cap">Search Your Place</p></div>
                 </div>
               </div>

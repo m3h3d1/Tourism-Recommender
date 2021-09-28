@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Sep 28, 2021 at 12:49 PM
+-- Generation Time: Sep 28, 2021 at 05:55 AM
 -- Server version: 10.4.14-MariaDB
 -- PHP Version: 7.4.9
 
@@ -20,26 +20,6 @@ SET time_zone = "+00:00";
 --
 -- Database: `travelrecommend`
 --
-
--- --------------------------------------------------------
-
---
--- Table structure for table `admin`
---
-
-CREATE TABLE `admin` (
-  `ID` int(11) NOT NULL,
-  `Email` varchar(256) NOT NULL,
-  `password` varchar(256) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Dumping data for table `admin`
---
-
-INSERT INTO `admin` (`ID`, `Email`, `password`) VALUES
-(1, 'Admin@yahoo.com', '1234'),
-(2, 'Admin@yahoo.com', '1234');
 
 -- --------------------------------------------------------
 
@@ -61,7 +41,7 @@ CREATE TABLE `places` (
 
 INSERT INTO `places` (`id`, `place_name`, `division`, `description`, `image`) VALUES
 (1, 'Saint Martin', 'Coxs bazar', 'Saint Martin is one of the most attractive and popular tourist place in Bangladesh.St. Martin\'s Island is a small island in the northeastern part of the Bay of Bengal, about 9 km south of the tip of the Cox\'s Bazar-Teknaf peninsula, and forming the southernmost part of Bangladesh. There is a small adjoining island that is separated at high tide, called Chera Dwip.\r\nImage result for saintmartin\r\nSt. Martin is generally known as “Narikel Zinzira” in Bengali, means \'Coconut Island\' and this is the only coral reef island in Bangladesh.', 'Saint-martin\'s-island.jpg'),
-(2, 'Coxs Bazar', 'Coxs Bazar', 'Cox’s Bazar is a town on the southeast coast of Bangladesh. It’s known for its very long, sandy beachfront, stretching from Sea Beach in the north to Kolatoli Beach in the south. Aggameda Khyang monastery is home to bronze statues and centuries-old Buddhist manuscripts. South of town, the tropical rainforest of Himchari National Park has waterfalls and many birds. North, sea turtles breed on nearby Sonadia Island.', 'cox bazar.jpg'),
+(15, 'Coxs Bazar', 'Coxs Bazar', 'Cox’s Bazar is a town on the southeast coast of Bangladesh. It’s known for its very long, sandy beachfront, stretching from Sea Beach in the north to Kolatoli Beach in the south. Aggameda Khyang monastery is home to bronze statues and centuries-old Buddhist manuscripts. South of town, the tropical rainforest of Himchari National Park has waterfalls and many birds. North, sea turtles breed on nearby Sonadia Island.', 'cox bazar.jpg'),
 (16, 'Keokaradong', 'Bandarban', 'keokaradong. Keokradong is the second highest mountain of Bangladesh. Keokradong is about 4,035 ft (1,230 meters) high from the sea level.It is the place of surprising beauty. This natural beauty is surely attracts the mind of the adventurous people. In the winter season many adventurous tourist visit this place with great excitement. You will pleased with the dazzling beauty of green hill, cool fountains, zigzag path, hilly road side, hide and seek game of clouds on the top of the hill. ', 'keokaradong.jpg'),
 (17, 'Paharpur', 'Chittagong', 'The Chittagong Hill Tracts Life and Nature at Risk The Chittagong Hill Tracts (CHT)—5,093 sq. miles in extent or 10% of Bangladesh—is a unique territory. While mast of the country is flat and a few feet above the sea level, the CHT in the southeast is mountainous with beautiful landscapes.its known as \'majestic natural beauty\' ', '330px-Paharpur_Buddhist_Bihar.jpg'),
 (18, ' Shait Gumbad Mosque.', 'Bagerhat', 'Bagerhat is not as famous as Dhaka or Srimangal but this peaceful city in the south west of the country has an array of historic attractions that you can enjoy at a slower pace.\r\nThe city was founded in the 15th century by the Sufi Saint Khan Jahan Ali and it is the home of the Shait Gumbad Mosque.', 'Bagerhat.jpg'),
@@ -108,7 +88,6 @@ INSERT INTO `places` (`id`, `place_name`, `division`, `description`, `image`) VA
 --
 
 CREATE TABLE `rating` (
-  `rating_id` int(10) UNSIGNED NOT NULL,
   `place_id` int(11) NOT NULL,
   `user_id` int(11) NOT NULL,
   `rating` int(11) NOT NULL,
@@ -119,26 +98,12 @@ CREATE TABLE `rating` (
 -- Dumping data for table `rating`
 --
 
-INSERT INTO `rating` (`rating_id`, `place_id`, `user_id`, `rating`, `review`) VALUES
-(1, 1, 1, 10, 'Beautiful sight'),
-(2, 2, 2, 9, 'Nice view'),
-(3, 0, 0, 0, '22'),
-(4, 0, 0, 0, '22'),
-(5, 0, 0, 0, '13'),
-(6, 0, 0, 0, '4'),
-(7, 0, 0, 0, '3'),
-(8, 0, 0, 0, '8'),
-(9, 0, 0, 0, '8'),
-(10, 0, 0, 0, '9'),
-(11, 0, 0, 0, ''),
-(12, 0, 0, 9, 'dfsdsf'),
-(13, 0, 0, 5, 'fsdf'),
-(14, 1, 0, 7, 'ffff'),
-(15, 1, 0, 4, 'dsd'),
-(16, 1, 0, 8, 'gffdff'),
-(17, 1, 0, 6, 'fdsssfs'),
-(18, 1, 0, 4, 'dsd'),
-(19, 1, 1, 7, 'fdssf');
+INSERT INTO `rating` (`place_id`, `user_id`, `rating`, `review`) VALUES
+(0, 0, 3, '32'),
+(0, 0, 0, '32'),
+(0, 0, 0, '22'),
+(0, 0, 0, '22'),
+(0, 0, 0, '13');
 
 -- --------------------------------------------------------
 
@@ -158,30 +123,17 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `name`, `email`, `password`) VALUES
-(1, 'a', 'a@gmail.com', 'a'),
-(2, 'Mahi', 'mahi@gmail.com', '123');
+(1, 'a', 'a@gmail.com', 'a');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `admin`
---
-ALTER TABLE `admin`
-  ADD PRIMARY KEY (`ID`);
-
---
 -- Indexes for table `places`
 --
 ALTER TABLE `places`
   ADD PRIMARY KEY (`id`);
-
---
--- Indexes for table `rating`
---
-ALTER TABLE `rating`
-  ADD PRIMARY KEY (`rating_id`);
 
 --
 -- Indexes for table `user`
@@ -194,28 +146,16 @@ ALTER TABLE `user`
 --
 
 --
--- AUTO_INCREMENT for table `admin`
---
-ALTER TABLE `admin`
-  MODIFY `ID` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
-
---
 -- AUTO_INCREMENT for table `places`
 --
 ALTER TABLE `places`
   MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=60;
 
 --
--- AUTO_INCREMENT for table `rating`
---
-ALTER TABLE `rating`
-  MODIFY `rating_id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
-
---
 -- AUTO_INCREMENT for table `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
