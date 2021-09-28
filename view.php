@@ -5,12 +5,11 @@ if (isset($_SESSION['email'])) {
 // echo $_SESSION['id'];
 
 } else {
-    header('location:index.php');
+    echo "You are not logged in.";
 }
 ?>
 
 <?php
-echo $_SESSION['id'];
     if (isset($_GET['place_name'])) {
       // Connect to the MySQL database  
         include "database.php"; 
@@ -93,7 +92,7 @@ echo $_SESSION['id'];
                     </div>
             <div class="col-5">
                 <h4> <?php echo "$place_name"; ?> </h4>
-                <p><i class="fa fa-star" style="color: yellow;"></i> 9.0 out of 10 <span> 100 reviews </span> </p>
+                <!-- <p><i class="fa fa-star" style="color: yellow;"></i> 9.0 out of 10 <span> 100 reviews </span> </p> -->
                 <div class="discription">
                     <p> 
                        <?php 
@@ -141,92 +140,160 @@ echo $_SESSION['id'];
              <input type="submit" name="save" value="Add Review">
             </div>
             <?php 
-                include 'database.php';
-                if(isset($_POST['save']))
-                {  
+                
+                    include 'database.php';
+                    if(isset($_POST['save']))
+                    {  
+                        if (isset($_SESSION['id'])) {
 
-                    // $sqljoin = "SELECT * FROM rating INNER JOIN user ON rating.user_id = user.id INNER JOIN places ON rating.place_id = places.id where user.id=$_SESSION['id'] and places.id=$place_id";
+                            // $sqljoin = "SELECT * FROM rating INNER JOIN user ON rating.user_id = user.id INNER JOIN places ON rating.place_id = places.id where user.id=$_SESSION['id'] and places.id=$place_id";
 
-                   $rating = $_POST['rating'];
-                   $review = $_POST['comment'];
+                           $rating = $_POST['rating'];
+                           $review = $_POST['comment'];
 
-                    $sql = "INSERT INTO `rating`(place_id, user_id, rating ,review)VALUES ('$place_id', '$_SESSION[id]', '$rating', '$review')";
+                            $sql = "INSERT INTO `rating`(place_id, user_id, rating ,review)VALUES ('$place_id', '$_SESSION[id]', '$rating', '$review')";
 
 
 
-                   if (mysqli_query($con, $sql)) {
-                    echo "New review inserted!";
-                   } else {
-                    echo "Error: " . $sql . "
-                " . mysqli_error($con);
-                   }
-                   mysqli_close($con);
-                }
+                           if (mysqli_query($con, $sql)) {
+                            echo "New review inserted!";
+                           } else {
+                            echo "Error: " . $sql . "
+                        " . mysqli_error($con);
+                           }
+                           mysqli_close($con);
+                        } else {
+                            echo "Please log in to add add review";
+                        }
+                    }
             ?>
 
         </form>
 
+               <!--  <?php
+                include "database.php";
 
-                    <?php 
-                    include('database.php');
-                    $connect = mysqli_connect("localhost", "root", "", "travelrecommend");
+                $sql = "SELECT * FROM rating";
+                $result = mysqli_query($con, $sql);
 
-                    $query="Select * from places";
-                    $data=mysqli_query($connect,$query);
-                    $total=mysqli_num_rows($data);
+                if (mysqli_num_rows($result) > 0) {
+                  // output data of each row
+                  while($row = mysqli_fetch_assoc($result)) {
+                    echo "id: " . $row["user_id"]. " - review: " . $row["review"]. " " . $row["rating"]. "<br>";
+                  }
+                } else {
+                  echo "0 results";
+                }
+
+                mysqli_close($con);
+                ?> -->
+
+                <?php
+                include "database.php";
+                $query = mysqli_query($con,"SELECT AVG(rating) as AVGRATE from rating where rating>0");
+                $row = mysqli_fetch_array($query);
+                $AVGRATE=$row['AVGRATE'];
+                $query = mysqli_query($con,"SELECT count(rating) as Total from rating where rating>0");
+                $row = mysqli_fetch_array($query);
+                $Total=$row['Total'];
+                $query2 = mysqli_query($con,"SELECT count(review) as Totalreview from  rating where rating>0");
+                $row = mysqli_fetch_array($query2);
+                $Total_review=$row['Totalreview'];
+                $review = mysqli_query($con,"SELECT review,rating,name from rating inner join user ON rating.user_id=user.id where rating>0 order by rating_id desc limit 5 ");
+                $rating = mysqli_query($con,"SELECT count(*) as Total,rating from rating group by rating order by rating desc");
+
+                // echo $Total;
+                ?>
 
 
-                    if($total!=0)
-                    {
+                <div class="row container">
+
+                <div class="col-md-4 ">
+
+                    <h3><b>Rating & Reviews</b></h3>
+
+                    <div class="row">
+
+                    
+                        <div class="col-md-6">
+
+                            <h3 align="center"><b><?php echo round($AVGRATE,1);?></b> <i class="fa fa-star" data-rating="2" style="font-size:20px;color:#ff9f00;"></i></h3>
+
+                            <!-- <p><?=$Total;?> ratings and <?=$Total_review;?> reviews</p> -->
+                            <p>Total: <?=$Total_review;?> reviews</p>
+
+                        </div>
+
+                        <div class="col-md-6">
+
+                            <?php
+
+                            while($db_rating= mysqli_fetch_array($rating)){
+                            ?>
+
+                                <h4 align="center"><?=$db_rating['rating'];?> <i class="fa fa-star" data-rating="2" style="font-size:20px;color:green;"></i> Total <?=$db_rating['Total'];?></h4>
+
+                                
+                                
+                            <?php   
+                            }
+                                
+                            ?>
+
+                        </div>
+
+                    </div>
+
+                    <div class="row">
+
+                        <div class="col-md-12"> 
+                        <?php
+
+                            while($db_review= mysqli_fetch_array($review)){
+                        ?>
+
+                                <h4><?=$db_review['rating'];?> <i class="fa fa-star" data-rating="2" style="font-size:20px;color:green;"></i> by <span style="font-size:14px;"><?=$db_review['name'];?></span></h4>
+
+                                <p><?=$db_review['review'];?></p>
+
+                                <hr>
+
+                        <?php   
+                            }
+                                
+                        ?>
+
+                        </div>
+
+                    </div>
+
                         
-                        while($result=mysqli_fetch_assoc($data))
-                    {
-                    echo "
-                    <tr >
-                    <td style=padding:10px;text-align:center>".$result['id']."</td>
-                    <td style=padding:10px;text-align:center>".$result['place_name']."</td>
-                    <td style=padding:10px>".$result['division']."</td>
-                    <td style=padding:10px>".$result['description']."</td>
-                    <td style=padding:10px>".$result['image']."</td>
-                    <td><a href='delete.php?id=$result[id] 'class=delete>Delete</a></td>
-                    </tr>";
+                    
+                    <div id="rating_div">
 
-                        }
-                    }
-                    else{
-                        echo 'No data found';
-                    }
-                    ?>
-            <div class="peoples-review">
-               <div class="rev">
-                <h5 id="mmm"> Riyad </h5>
-                <p style="padding-left: 20px; text-align: justify;"> <i class="fa fa-star" style="color: yellow;"></i><span >9.0 out of 10</span>  </p>
-                <p style="padding-left: 20px; text-align: justify;">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia molestiae voluptas vel eveniet,
-                       sint qui iste debitis minus magni asperiores quas quaerat totam. Aspernatur odio inventore vitae.
-                       Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia molestiae voluptas vel eveniet,
-                   sint qui iste debitis minus magni asperiores quas quaerat totam. Aspernatur odio inventore vitae.
-                </p>
-               </div>
-               <h5> Rafi </h5>
-               <p style="padding-left: 20px; text-align: justify;"> <i class="fa fa-star" style="color: yellow;"></i><span >9.0 out of 10</span>  </p>
-               <p style="padding-left: 20px; text-align: justify;">
-                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia molestiae voluptas vel eveniet,
-                      sint qui iste debitis minus magni asperiores quas quaerat totam. Aspernatur odio inventore vitae.
-                      Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia molestiae voluptas vel eveniet,
-                   sint qui iste debitis minus magni asperiores quas quaerat totam. Aspernatur odio inventore vitae.
-               </p>
-            </div>
-            <h5> Sinthia </h5>
-            <p style="padding-left: 20px; text-align: justify;"> <i class="fa fa-star" style="color: yellow;"></i><span>9.0 out of 10</span>  </p>
-            <p style="padding-left: 20px; text-align: justify;">
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia molestiae voluptas vel eveniet,
-                   sint qui iste debitis minus magni asperiores quas quaerat totam. Aspernatur odio inventore vitae.
-                   Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia molestiae voluptas vel eveniet,
-                   sint qui iste debitis minus magni asperiores quas quaerat totam. Aspernatur odio inventore vitae.
-            </p>
-            
-           </div>
+                                <div class="star-rating">
+
+                                    <span class="fa divya fa-star-o" data-rating="1" style="font-size:20px;"></span>
+
+                                    <span class="fa fa-star-o" data-rating="2" style="font-size:20px;"></span>
+
+                                    <span class="fa fa-star-o" data-rating="3" style="font-size:20px;"></span>
+
+                                    <span class="fa fa-star-o" data-rating="4" style="font-size:20px;"></span>
+
+                                    <span class="fa fa-star-o" data-rating="5" style="font-size:20px;"></span>
+
+                                    <input type="hidden" name="whatever3" class="rating-value" value="1">
+
+                                </div>
+
+                    </div>
+
+                </div>
+
+                </div><br>
+
+
     </section>
 </body>
 </html>
