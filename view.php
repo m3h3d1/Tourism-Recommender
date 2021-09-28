@@ -170,7 +170,9 @@ if (isset($_SESSION['email'])) {
 
         </form>
 
-               <!--  <?php
+               <!--  
+
+               <?php
                 include "database.php";
 
                 $sql = "SELECT * FROM rating";
@@ -186,7 +188,8 @@ if (isset($_SESSION['email'])) {
                 }
 
                 mysqli_close($con);
-                ?> -->
+                ?> 
+            -->
 
                 <?php
                 include "database.php";
@@ -199,7 +202,7 @@ if (isset($_SESSION['email'])) {
                 $query2 = mysqli_query($con,"SELECT count(review) as Totalreview from  rating where rating>0");
                 $row = mysqli_fetch_array($query2);
                 $Total_review=$row['Totalreview'];
-                $review = mysqli_query($con,"SELECT review,rating,name from rating inner join user ON rating.user_id=user.id where rating>0 order by rating_id desc limit 5 ");
+                $review = mysqli_query($con,"SELECT review,rating,name from rating inner join user ON rating.user_id=user.id where rating>0 order by rating_id desc limit 10 ");
                 $rating = mysqli_query($con,"SELECT count(*) as Total,rating from rating group by rating order by rating desc");
 
                 // echo $Total;
