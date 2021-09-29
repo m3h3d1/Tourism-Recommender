@@ -24,6 +24,7 @@
       <style>
           .l-box{position: relative;top: 30px;left:50px;width: 250px;}
 .l-box2{position: relative;top: 30px;left:150px;width: 250px;}
+.box2{border: 1px red;height: 370px;background-color: white;margin-top: 180px;}
 
 .l-box4{position: relative;top: 30px;left:270px;width: 250px;font-size: 13px;}
 .bb{font-size: 15px;}
@@ -103,18 +104,29 @@
                 </nav>
                 
             </div>
+            <!-- <div class="media">
+                <ul class="icon-position">
+                   <a href="#" class="icon-design "> <li><i class="fab fa-facebook"></i></li></a> 
+                   <a href="#" class="icon-design "> <li><i class="fab fa-whatsapp"></i></li></a>
+                   <a href="#" class="icon-design"> <li><i class="fab fa-twitter"></i></li></a>
+                    
+                </ul>
+            </div> -->
         </div>
         </div>
        
  </section>
-<section>    
  <h1 style="text-align: center;font-weight: bolder ;color:darkgreen;">Discover Your Solutions</h1><br>
  <p style="text-align: center;font-style: normal;font-family: 'Courier New', Courier, monospace;color: darkslategray;font-size: 15px"><b>Destinations are full of life. There are thousands of things to see and to do and, guess what? 
    Travellers would love to know about them. That is why we have developed sophisticated products so that they don’t have to miss anything.Travelers often don’t know where they actually want to travel, they get lost when planning a trip with the amount of information online. 
    With travel recommendation system you can inspire them and show them all they can do at any destination throughout the journey.</b></p>
     <br><br><br>
+      
       <div class="container boxa">
-        <h2 style="color: brown ; "  id="destinations"><b>Top Places in Bangladesh</b></h2>
+      <h2 style="padding-top: 25px; text-align: center; padding-bottom:10px" id="destinations"> Destinations </h2>
+
+
+        <h2 style="color: brown;"><b>Top Places in Bangladesh</b></h2>
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
           <ol class="carousel-indicators">
@@ -183,9 +195,8 @@
         </div>
       </div>
 </div>
-
-</section>
       <br><br><br>
+    
         <div class="container">
           <div class="row box2">
             <div class="col-sm-10">
@@ -212,14 +223,15 @@
             </div>
           </div>
         <br>
+        <h2 style="padding-top: 5px; text-align: center;" id="regions"> Regions </h2>
         <div class="container fluid car">
           <div class="row">
               <div class="col-sm-6 col-md-3 col-lg-3 ">
                   <div class="card" style="width: 22rem;">
                       <img src="img/rongpur.jpg" class="card-img-top i20" alt="...">
                       
-    <section>                  
-  <h2 style="color: brown ; "  id="regions"><b>Some regions</b></h2>
+        
+                      
                       <div class="card-body">
                           <h5 class="card-title"><b>Rangpur</b></h5>
                           <!-- <p><b>13 August</b>,2017 By:<b>Admin</b></p> -->
@@ -308,8 +320,9 @@
                       </div>
             </div>
           </div>
-  </section>
-
+          <a href="seemore.php"><button type="button" class="btn btn-secondary btn-lg" style="margin-left:800px">See More=></button></a>
+  
+      
       <section>
         <h2 style="padding-top: 25px; text-align: center;" id="experinace"> Experience </h2>
         <div class="container">
@@ -341,6 +354,13 @@
                               </ul>
                           </div>
                       </div>
+                      <!-- <div class="col-sm-4 col-md-6 col-lg-3">
+                          <div class="l-box3 container">
+                              <h3 class=" text-white"><b>RECENT TWEETS</b></h3>
+                              <p class="t10"><i class="fab fa-twitter text-primary ml-1"></i> It is a long established fact<span class="text-warning"> readable content</span> of the page when looking at its layout.</p>
+                              <p class="t10"><i class="fab fa-twitter text-primary"></i> Long established fact that a readers will be <span class="text-warning">distracted</span> by the readable content </p>
+                          </div>
+                      </div> -->
                       <div class="col-sm-4 col-md-4 col-lg-4 three">
                           <div class="l-box4 container" style="margin-left: -60px;">
                               <h3 class=" text-white"><b>Terms & Policies</b></h3>
@@ -349,6 +369,10 @@
                                   <li class="mb-1 ">Do not use my private Information</li>
                                   <li class="mb-1 bb">Terms of use</li>  
                                   <li class="mb-1 ">Accessibility</li>      
+<!-- 
+                              <p class="t11 text-start"><span class="text-warning"><b>MAIN OFFICE:</b></span><br>S.A Tower(Level-5),plot#1,Road#134,Block SE(A),Gulshan,Dhaka</p>
+                              <p class="t11 mt-1" ><span class="text-warning"><b>PHONE:</b></span><br>+001232 44 5665   +02245 765 7655</p>
+                              <div class="text-white align-items-center text-center"><i class="fab fa-twitter"></i> <i class="fab fa-facebook"></i>  <i class="fas fa-envelope-open-text"></i>  <i class="fab fa-instagram"></i></div> -->
                           </div>
                       </div>
                   </div>

@@ -31,6 +31,7 @@ if (isset($_SESSION['email'])) {
       <style>
           .l-box{position: relative;top: 30px;left:50px;width: 250px;}
 .l-box2{position: relative;top: 30px;left:150px;width: 250px;}
+.box2{border: 1px red;height: 370px;background-color: white;margin-top: 180px;}
 
 .l-box4{position: relative;top: 30px;left:270px;width: 250px;font-size: 13px;}
 .bb{font-size: 15px;}
@@ -46,12 +47,12 @@ if (isset($_SESSION['email'])) {
             <div class="navbar">
                 <div class="logo">
                   <div class="caption">
-                    <p class="p1">Tourism Recommender</p>
+                    <p class="p1">Jatra</p>
                 </div>
                 </div>
                 <nav>
                     <ul id="MenuItems">
-                        <li><a href="#" style="text-decoration: none; color:white;"> Destinations </a></li>
+                        <li><a href="#destinations" style="text-decoration: none; color:white;"> Destinations </a></li>
                         <li><a href="log.php" style="text-decoration: none; color: white;"> <?php echo $_SESSION['email']; ?> </a></li>
                         <li><a href="#regions" style="text-decoration: none; color: white;"> Regions </a></li>
                         <li><a href="#experinace" style="text-decoration: none; color: white;"> Experiences </a></li>
@@ -132,6 +133,8 @@ if (isset($_SESSION['email'])) {
     <br><br><br>
       
       <div class="container boxa">
+      <h2 style="padding-top: 25px; text-align: center; padding-bottom:10px" id="destinations"> Destinations </h2>
+
         <h2 style="color: brown;"><b>Top Places in Bangladesh</b></h2>
         <div id="myCarousel" class="carousel slide" data-ride="carousel">
           <!-- Indicators -->
@@ -228,6 +231,8 @@ if (isset($_SESSION['email'])) {
             </div>
           </div>
         <br>
+        <h2 style="padding-top: 25px; text-align: center; padding-bottom:10px" id="regions"> Regions </h2>
+
         <div class="container fluid car">
           <div class="row">
               <div class="col-sm-6 col-md-3 col-lg-3 ">
@@ -323,7 +328,8 @@ if (isset($_SESSION['email'])) {
                       </div>
             </div>
           </div>
-  
+          <a href="seemore.php"><button type="button" class="btn btn-secondary btn-lg" style="margin-left:800px">See More=></button></a>
+
       
       <section>
         <h2 style="padding-top: 25px; text-align: center;" id="experinace"> Experience </h2>

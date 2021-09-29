@@ -6,6 +6,7 @@ if (isset($_SESSION['email'])) {
 
 } else {
     echo "You are not logged in.";
+    
 }
 ?>
 
@@ -65,7 +66,7 @@ if (isset($_SESSION['email'])) {
                 <div class="navbar">
                     <nav>
                         <ul id="MenuItems">
-                            <li><a href="index.php" style="text-decoration: none; color: black;"> Home </a></li>
+                            <li><a href="profile.php" style="text-decoration: none; color: black;"> Home </a></li>
                             <li><a href="#" style="text-decoration: none; color: black;"> destinations </a></li>
                             <li><a href="#regions" style="text-decoration: none; color: black;"> Regions </a></li>
                             <li><a href="#experinace" style="text-decoration: none; color: black;"> Experiences </a></li>
