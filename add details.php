@@ -111,12 +111,6 @@ if ($conn)
                         </div>
 
                     </div>
-                    <!-- <div class="form-row align-items-center container">
-    <div class="col-sm-8 my-1 box1">
-      <label class="sr-only" for="inlineFormInputName">Description <br><br></label>
-      <textarea id="message" class="form-control" id="inlineFormInputName" placeholder="Write place Description"></textarea>
-    </div>
-  </div> -->
                     <div style="margin-left:20px;">
                         <input type="hidden" name="size" value="1000000">
                         <!-- <div>
@@ -131,26 +125,6 @@ if ($conn)
                     </div>
                     <button class="btn btn-primary mt-2 align" name="submit">Add Details</button>
                 </form>
-                <!-- 
-<script>
-(function() {
-  'use strict';
-  window.addEventListener('load', function() {
- 
-    var forms = document.getElementsByClassName('needs-validation');
- 
-    var validation = Array.prototype.filter.call(forms, function(form) {
-      form.addEventListener('submit', function(event) {
-        if (form.checkValidity() === false) {
-          event.preventDefault();
-          event.stopPropagation();
-        }
-        form.classList.add('was-validated');
-      }, false);
-    });
-  }, false);
-})();
-</script> -->
             </div>
         </div>
 

@@ -33,10 +33,6 @@
                     <div class="row">
                         <div class="col-md-6">
                             <form action=" " method="post">
-                                <!-- <div class="form-group">
-                                    <input type="text" name="get_place" placeholder="Enter District" class="form-control" style="margin-left:390px;margin-top:40px" required>
-
-                                </div> -->
         <label for="validationCustom04" style="margin-left:40%;"><b> Select District   </b>  </label>
         <select name="get_place">
             <option selected disabled value="" >Choose related District</option>

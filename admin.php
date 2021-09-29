@@ -82,12 +82,8 @@ else
 					<label for="password">Password</label>
 					<input type="password" name="Password" class="form-control" placeholder="Your Password">
 				</div>
-				<!-- <div class="checkbox">
-					<label><input type="checkbox" name="">Remember me</label>
-				</div> -->
+
 				<button type="submit" name="login" class="btn btn-success center-block">Submit</button><br><br>
-				<!-- <h5 class="text-white"><a class="p3" href="Registration.php">Don't Have a Account?</a></h5> -->
-				<!-- <a class="btn btn-secondary btn-lg"></a> Create an account</a> -->
 			</form>
             <?php
             if(isset($_Get['error'])==true)

@@ -195,17 +195,17 @@ if (isset($_SESSION['email'])) {
 
                 <?php
                 include "database.php";
-                $query = mysqli_query($con,"SELECT AVG(rating) as AVGRATE from rating where rating>0");
+                $query = mysqli_query($con,"SELECT AVG(rating) as AVGRATE from rating where rating>0 and place_id=$place_id");
                 $row = mysqli_fetch_array($query);
                 $AVGRATE=$row['AVGRATE'];
-                $query = mysqli_query($con,"SELECT count(rating) as Total from rating where rating>0");
+                $query = mysqli_query($con,"SELECT count(rating) as Total from rating where rating>0 and place_id=$place_id");
                 $row = mysqli_fetch_array($query);
                 $Total=$row['Total'];
-                $query2 = mysqli_query($con,"SELECT count(review) as Totalreview from  rating where rating>0");
+                $query2 = mysqli_query($con,"SELECT count(review) as Totalreview from  rating where rating>0 and place_id=$place_id");
                 $row = mysqli_fetch_array($query2);
                 $Total_review=$row['Totalreview'];
-                $review = mysqli_query($con,"SELECT review,rating,name from rating inner join user ON rating.user_id=user.id where rating>0 order by rating_id desc limit 10 ");
-                $rating = mysqli_query($con,"SELECT count(*) as Total,rating from rating group by rating order by rating desc");
+                $review = mysqli_query($con,"SELECT review,rating,name from rating inner join user ON rating.user_id=user.id where rating>0 and place_id=$place_id order by rating_id desc limit 10 ");
+                $rating = mysqli_query($con,"SELECT count(*) as Total,rating from rating where place_id=$place_id group by rating order by rating desc");
 
                 // echo $Total;
                 ?>

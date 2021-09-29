@@ -117,37 +117,6 @@ a{
 .features{
    
     padding: 50px 0;}
-/* }.txt{color: bisque;}
-.menu{background-color:#2d3436;height: 100px;z-index: +1;}
-.navbar-brand{margin-left: 140px;}
-.menu_h
-{
-    margin-left: 600px;
-    }
-   
-    .menu_a
-    {
-        font-size:16px;
-        color:white!important;
-        padding-left: 60px;
-        padding-right: 60px;
-        margin-right: 29px;  
-
-    }
-    .nav-link:hover
-    {
-        color: rgb(131, 131, 248)!important;
-    }
-    .p1 {
-        font-size: 35px;
-        font-weight: bold;
-        font-family: 'Londrina Solid', cursive;
-        color: blue;
-        font-size: 30px;font-weight: bold;padding-left: 10px;margin-top: 10px;font-family: 'Londrina Solid', cursive; color: rgb(240, 237, 104);
-    }
-.searchi{padding-right: 500px;}
-.search{margin-top: 200px;padding-top: 100px;}
-.logo{width: 50%;height: 50%;border-radius: 50%;margin-left: 100px; margin-top: 100px;} */
 .p1 {
     font-size: 35px;
     font-weight: bold;
@@ -192,12 +161,6 @@ a{
     color: #008cff;
 }
 
-/* .l-box:hover{text-shadow: 0 0 1px yellow}
-.l-box2:hover{text-shadow: 0 0 1px yellow}
-
-.l-box3:hover{text-shadow: 0 0 1px yellow}
-
-.l-box4:hover{text-shadow: 0 0 1px yellow} */
 .i20{height: 180px;}
 .card:hover{transform: scale(1.1);box-shadow: 0 0 5px silver;}
 .b_map{width: 100%;height: 600px;position: absolute;}
