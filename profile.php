@@ -53,7 +53,7 @@ if (isset($_SESSION['email'])) {
                 <nav>
                     <ul id="MenuItems">
                         <li><a href="#destinations" style="text-decoration: none; color:white;"> Destinations </a></li>
-                        <li><a href="log.php" style="text-decoration: none; color: white;"> <?php echo $_SESSION['email']; ?> </a></li>
+                        <li><a href="" style="text-decoration: none; color: white;"> <?php echo $_SESSION['email']; ?> </a></li>
                         <li><a href="#regions" style="text-decoration: none; color: white;"> Regions </a></li>
                         <li><a href="#experinace" style="text-decoration: none; color: white;"> Experiences </a></li>
                         
