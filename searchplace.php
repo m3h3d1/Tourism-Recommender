@@ -21,7 +21,7 @@
 </head>
 
 <body>
-<a href="index.php" <button class="btn btn-success my-2 my-sm-0 ml-5" type="submit">Home</button></a>
+<a href="profile.php" <button class="btn btn-success my-2 my-sm-0 ml-5" type="submit">Home</button></a>
     
         <div class="row">
             <div class="col-md-12 mt-2">

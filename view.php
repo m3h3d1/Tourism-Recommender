@@ -71,7 +71,7 @@ if (isset($_SESSION['email'])) {
                          <!--    <li><a href="#" style="text-decoration: none; color: black;"> destinations </a></li>
                             <li><a href="#regions" style="text-decoration: none; color: black;"> Regions </a></li>
                             <li><a href="#experinace" style="text-decoration: none; color: black;"> Experiences </a></li> -->
-                            <li><a href="#searchplace.php" style="text-decoration: none; color: black;">Search by District </a></li>
+                            <li><a href="searchplace.php" style="text-decoration: none; color: black;">Search by District </a></li>
 
                            
                         </ul>
@@ -148,27 +148,38 @@ if (isset($_SESSION['email'])) {
                     include 'database.php';
                     if(isset($_POST['save']))
                     {  
-                        if (isset($_SESSION['id'])) {
-
+                        
+                        if (!isset($_SESSION['id'])) {
+                            echo "Please log in to add review:  ";}
+                        else {
                             // $sqljoin = "SELECT * FROM rating INNER JOIN user ON rating.user_id = user.id INNER JOIN places ON rating.place_id = places.id where user.id=$_SESSION['id'] and places.id=$place_id";
 
-                           $rating = $_POST['rating'];
-                           $review = $_POST['comment'];
-
-                            $sql = "INSERT INTO `rating`(place_id, user_id, rating ,review)VALUES ('$place_id', '$_SESSION[id]', '$rating', '$review')";
 
 
+                            // count review for current user
+                            $cntRating = mysqli_query($con,"SELECT count(rating) as Total from rating where place_id=$place_id and user_id=$_SESSION[id] and  rating>0");
+                            $rowCntRating = mysqli_fetch_array($cntRating);
 
-                           if (mysqli_query($con, $sql)) {
-                            echo "New review inserted!";
-                           } else {
-                            echo "Error: " . $sql . "
-                        " . mysqli_error($con);
-                           }
-                           mysqli_close($con);
-                        } else {
-                            echo "Please log in to add review:  ";
-                            // echo("<button onclick=\"location.href='login.php'\">Login</button>");
+                            if($rowCntRating['Total']>0) {
+                                echo "You have already given review for this place.";
+                            }
+
+                            else {
+                                $rating = $_POST['rating'];
+                               $review = $_POST['comment'];
+
+                                $sql = "INSERT INTO `rating`(place_id, user_id, rating ,review)VALUES ('$place_id', '$_SESSION[id]', '$rating', '$review')";
+
+
+
+                               if (mysqli_query($con, $sql)) {
+                                echo "New review inserted!";
+                               } else {
+                                echo "Error: " . $sql . "
+                            " . mysqli_error($con);
+                               }
+                            }
+                            mysqli_close($con);
                         }
                     }
             ?>
