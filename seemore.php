@@ -18,6 +18,7 @@
     </head>
     <body>
     <h2 style="color: brown;text-align:center"><b>Top Places in Bangladesh</b></h2>
+      <a href="profile.php"><button type="button" class="btn btn-secondary btn-lg">Home</button></a>
 
         
         <div class="card-deck">

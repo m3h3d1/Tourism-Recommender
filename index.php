@@ -279,7 +279,7 @@
                 <div class="card" style="width: 22rem;">
                     <img src="img/dhaka.jpg" class="card-img-top i20" alt="...">
                     <div class="card-body">
-                        <h5 class="card-title"><b>Spend time with dear ones</b></h5>
+                        <h5 class="card-title"><b>Dhaka</b></h5>
                         
                         <p class="card-text">Spending real time example text to build on the card title and make up the bulk of
                             the card's dear ones.</p>
@@ -290,7 +290,7 @@
                   <div class="card" style="width: 22rem;">
                       <img src="img/khulna1.jpg" class="card-img-top i20" alt="...">
                       <div class="card-body">
-                          <h5 class="card-title"><b>Spend time with dear ones</b></h5>
+                          <h5 class="card-title"><b>Khulna</b></h5>
                           
                           <p class="card-text">Spending real time example text to build on the card title and make up the bulk of
                               the card's dear ones.</p>

@@ -5,8 +5,7 @@ if (isset($_SESSION['email'])) {
 // echo $_SESSION['id'];
 
 } else {
-    echo "You are not logged in.";
-    
+    echo("<button onclick=\"location.href='login.php'\">Login</button>");
 }
 ?>
 
@@ -41,6 +40,8 @@ if (isset($_SESSION['email'])) {
         exit();
     }
 ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -67,9 +68,9 @@ if (isset($_SESSION['email'])) {
                     <nav>
                         <ul id="MenuItems">
                             <li><a href="profile.php" style="text-decoration: none; color: black;"> Home </a></li>
-                            <li><a href="#" style="text-decoration: none; color: black;"> destinations </a></li>
+                         <!--    <li><a href="#" style="text-decoration: none; color: black;"> destinations </a></li>
                             <li><a href="#regions" style="text-decoration: none; color: black;"> Regions </a></li>
-                            <li><a href="#experinace" style="text-decoration: none; color: black;"> Experiences </a></li>
+                            <li><a href="#experinace" style="text-decoration: none; color: black;"> Experiences </a></li> -->
                             <li><a href="#searchplace.php" style="text-decoration: none; color: black;">Search by District </a></li>
 
                            
@@ -166,7 +167,8 @@ if (isset($_SESSION['email'])) {
                            }
                            mysqli_close($con);
                         } else {
-                            echo "Please log in to add review";
+                            echo "Please log in to add review:  ";
+                            // echo("<button onclick=\"location.href='login.php'\">Login</button>");
                         }
                     }
             ?>
